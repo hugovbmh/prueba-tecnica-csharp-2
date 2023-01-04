@@ -1,0 +1,33 @@
+﻿@using System.Data
+@model DataTable
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>MostrarEmpleados_IT_FINANCE</title>
+    </head>
+    <body>
+        <h1 style="text-align:center;">Mostrar empleados IT y FINANCE</h1>
+        <table style="border:1px solid black;margin:auto;width:500px;">
+            <tr>
+                <td>Nombre Completo</td>
+                <td>Sueldo</td>
+                <td>Tiempo de servicio del empleado (en meses)</td>
+            </tr>
+        @foreach (DataRow r in Model.Rows)
+        {
+            <tr>
+                <td>@Convert.ToString(r["Nombre Completo"])</td>
+                <td>@Convert.ToString(r["Sueldo"])</td>
+                <td>@Convert.ToString(r["Tiempo de servicio del empleado (en meses)"])</td>
+            </tr>
+        }
+        </table>
+    </body>
+</html>
